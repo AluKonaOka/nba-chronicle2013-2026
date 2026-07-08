@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2013–2026 NBA変遷史 — A Chronicle of Change</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800;900&family=Noto+Serif+JP:wght@400;500;600;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FDFDFD;
+    --paper2:#F6F7F9;
+    --royal:#00338D;
+    --red:#C60C30;
+    --legacy:#002244;
+    --ink:#1a2436;
+    --muted:#61708a;
+    --rule:rgba(0,34,68,.16);
+    --rule-soft:rgba(0,34,68,.09);
+    --lak-p:#552583;--lak-g:#FDB927;
+    --gsw-b:#1D428A;--gsw-g:#FFC72C;
+    --serif:"Noto Serif JP",serif;
+    --sans:"Noto Sans JP",sans-serif;
+    --disp:"Anton",sans-serif;
+    --util:"Archivo",sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--paper);
+    -webkit-font-smoothing:antialiased;line-height:1.9;overflow-x:hidden}
+  ::selection{background:var(--red);color:#fff}
+  img{max-width:100%}
+
+  /* paper texture — very subtle */
+  body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.26;
+    mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)' opacity='0.4'/%3E%3C/svg%3E")}
+
+  .wrap{max-width:1200px;margin:0 auto;padding:0 48px}
+  @media(max-width:720px){.wrap{padding:0 22px}}
+
+  /* utility type */
+  .meta{font-family:var(--util);font-weight:700;font-size:10.5px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--muted)}
+  .meta b{color:var(--red);font-weight:800}
+  .num{font-family:var(--util);font-variant-numeric:tabular-nums}
+
+  /* progress hairline */
+  .progress{position:fixed;top:0;left:0;height:2px;width:0;z-index:90;background:var(--red)}
+
+  /* ============ MASTHEAD ============ */
+  .masthead{position:fixed;top:0;left:0;right:0;z-index:80;background:rgba(253,253,253,.88);
+    backdrop-filter:blur(12px);border-bottom:1px solid var(--rule)}
+  .masthead .bar{max-width:1200px;margin:0 auto;padding:0 48px;height:54px;
+    display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .masthead .brand{font-family:var(--util);font-weight:900;font-size:13.5px;letter-spacing:.16em;
+    color:var(--legacy);text-transform:uppercase;white-space:nowrap}
+  .masthead .brand em{font-style:normal;color:var(--red)}
+  .masthead nav{display:flex;gap:2px;overflow:hidden}
+  .masthead nav a{font-family:var(--util);font-weight:600;font-size:10px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--muted);text-decoration:none;padding:6px 9px;
+    border-radius:3px;transition:.18s;white-space:nowrap}
+  .masthead nav a:hover{color:#fff;background:var(--royal)}
+  .masthead .issue{font-family:var(--util);font-weight:600;font-size:10px;letter-spacing:.18em;
+    color:var(--muted);white-space:nowrap}
+  @media(max-width:1080px){.masthead nav{display:none}}
+  @media(max-width:720px){.masthead .bar{padding:0 22px}.masthead .issue{display:none}}
+  .menu-btn{display:none;background:none;border:1px solid var(--rule);border-radius:4px;
+    padding:7px 12px;font-family:var(--util);font-weight:700;font-size:10px;letter-spacing:.14em;
+    color:var(--legacy);cursor:pointer}
+  @media(max-width:1080px){.menu-btn{display:block}}
+  .drawer{position:fixed;inset:0;z-index:95;background:var(--legacy);display:none;
+    flex-direction:column;justify-content:center;padding:40px 34px;overflow-y:auto}
+  .drawer.on{display:flex}
+  .drawer a{display:flex;align-items:baseline;gap:16px;color:#e8edf5;text-decoration:none;
+    padding:9px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+  .drawer a .no{font-family:var(--util);font-weight:800;font-size:11px;color:#ff8ba0;letter-spacing:.1em;width:26px}
+  .drawer a .t{font-family:var(--serif);font-weight:700;font-size:16.5px}
+  .drawer .x{position:absolute;top:18px;right:22px;background:none;border:none;color:#fff;font-size:24px;cursor:pointer}
+
+  /* ============ HERO ============ */
+  .hero{position:relative;min-height:100svh;padding:120px 0 60px;display:flex;align-items:center;overflow:hidden}
+  .hero .grid-lines{position:absolute;inset:0;pointer-events:none;
+    background:
+      linear-gradient(90deg,var(--rule-soft) 1px,transparent 1px) 0 0/ calc(100%/6) 100%;
+    mask-image:linear-gradient(180deg,transparent,black 12%,black 82%,transparent)}
+  .hero .inner{position:relative;width:100%}
+  .hero .kicker-row{display:flex;justify-content:space-between;align-items:flex-end;
+    border-top:2px solid var(--legacy);padding-top:14px;margin-bottom:clamp(30px,6vh,64px)}
+  .hero .kicker-row .r{text-align:right}
+  .hero h1{font-family:var(--disp);font-weight:400;line-height:1.0;letter-spacing:-.005em;
+    color:var(--legacy);font-size:clamp(58px,12vw,168px);text-transform:uppercase}
+  .hero h1 .dash{color:var(--red)}
+  .hero .title-row{display:grid;grid-template-columns:1fr;gap:clamp(18px,2.6vw,34px)}
+  .hero .subtitle{font-family:var(--serif);font-weight:900;
+    font-size:clamp(23px,4vw,46px);letter-spacing:.04em;color:var(--ink);line-height:1.42;
+    padding-top:clamp(14px,2vw,22px);border-top:1px solid var(--rule)}
+  .hero .subtitle .accent{color:var(--red)}
+  .hero .lede{max-width:640px;margin-top:clamp(22px,3.5vh,36px);font-size:15px;line-height:2.15;
+    color:#3c4b63;font-weight:500}
+  .hero .lede b{color:var(--red);font-weight:700}
+  .hero .statline{margin-top:clamp(26px,4.5vh,46px);display:flex;flex-wrap:wrap;position:relative;z-index:2;
+    background:var(--paper);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  .hero .stat{flex:1 1 auto;min-width:130px;padding:16px 22px 15px;border-right:1px solid var(--rule-soft)}
+  .hero .stat:last-child{border-right:none}
+  .hero .stat .v{font-family:var(--util);font-weight:900;font-size:31px;letter-spacing:-.01em;
+    color:var(--legacy);line-height:1;font-variant-numeric:tabular-nums}
+  .hero .stat .v em{font-style:normal;color:var(--red)}
+  .hero .stat .k{margin-top:7px;font-size:10.5px;color:var(--muted);letter-spacing:.06em;font-weight:500}
+  @media(max-width:720px){
+    .hero{padding-top:96px}
+    .hero .stat{min-width:46%;border-right:none;border-bottom:1px solid var(--rule-soft);padding:13px 4px}
+  }
+
+  /* reveal */
+  .rv{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+  .rv.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+
+  /* ============ INDEX (目次) ============ */
+  .toc{padding:74px 0 84px;border-top:1px solid var(--rule)}
+  .toc .head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:36px}
+  .toc h2{font-family:var(--serif);font-weight:900;font-size:26px;color:var(--legacy);letter-spacing:.06em}
+  .toc ol{list-style:none;columns:2;column-gap:64px}
+  @media(max-width:820px){.toc ol{columns:1}}
+  .toc li{break-inside:avoid}
+  .toc a{display:flex;align-items:baseline;gap:14px;padding:13px 2px;text-decoration:none;
+    border-bottom:1px solid var(--rule-soft);transition:.18s}
+  .toc a:hover{background:rgba(0,51,141,.04)}
+  .toc .no{font-family:var(--util);font-weight:800;font-size:11.5px;color:var(--red);letter-spacing:.06em;min-width:24px}
+  .toc .t{font-family:var(--serif);font-weight:700;font-size:15.5px;color:var(--ink)}
+  .toc .dots{flex:1;border-bottom:1px dotted var(--rule);transform:translateY(-4px);min-width:20px}
+  .toc .pg{font-family:var(--util);font-weight:600;font-size:10px;color:var(--muted);letter-spacing:.1em}
+
+  /* ============ CHAPTER SYSTEM ============ */
+  .chapter{padding:96px 0 88px;position:relative}
+  .chapter + .chapter{border-top:1px solid var(--rule)}
+  .ch-head{display:grid;grid-template-columns:130px 1fr;gap:clamp(24px,4vw,56px);margin-bottom:48px;align-items:start}
+  .ch-rail{position:relative;padding-top:6px}
+  .ch-rail .big-no{font-family:var(--disp);font-size:clamp(58px,7vw,92px);line-height:.9;
+    color:transparent;-webkit-text-stroke:1.5px var(--rule);letter-spacing:0}
+  .ch-rail .kicker{margin-top:10px;font-family:var(--serif);font-weight:700;font-size:13px;
+    letter-spacing:.14em;color:var(--red);padding-top:9px;border-top:2px solid var(--legacy);display:inline-block}
+  .ch-body h2{font-family:var(--serif);font-weight:900;font-size:clamp(25px,3.6vw,40px);
+    line-height:1.42;color:var(--legacy);letter-spacing:.015em;max-width:820px}
+  .ch-body .en-kicker{font-family:var(--util);font-weight:800;font-size:11px;letter-spacing:.26em;
+    text-transform:uppercase;color:var(--royal);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+  .ch-body .en-kicker::after{content:"";flex:0 0 44px;height:1px;background:var(--red)}
+  .ch-body .lead{margin-top:22px;max-width:760px;font-size:15.5px;line-height:2.1;color:#33435c;font-weight:500}
+  .prose{max-width:760px}
+  .prose p{margin-top:20px;font-size:14.5px;line-height:2.15;color:#3a4a63}
+  .prose p .r{color:var(--red);font-weight:700}
+  .prose p .b{color:var(--royal);font-weight:700}
+  .prose p strong{color:var(--legacy)}
+  @media(max-width:820px){
+    .chapter{padding:64px 0 58px}
+    .ch-head{grid-template-columns:1fr;gap:12px;margin-bottom:36px}
+    .ch-rail{display:flex;align-items:center;gap:18px;padding-top:0}
+    .ch-rail .kicker{margin-top:0;border-top:none;padding-top:0}
+    .ch-rail .big-no{font-size:52px}
+  }
+
+  /* figure system */
+  figure.fig{margin:56px 0 10px;border:1px solid var(--rule);background:#fff;border-radius:6px;overflow:hidden}
+  figure.fig .fig-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+    padding:16px 22px 14px;border-bottom:1px solid var(--rule-soft)}
+  figure.fig .fig-no{font-family:var(--util);font-weight:800;font-size:10.5px;letter-spacing:.2em;color:var(--red)}
+  figure.fig .fig-title{font-family:var(--serif);font-weight:700;font-size:14.5px;color:var(--legacy)}
+  figure.fig .fig-src{font-family:var(--util);font-weight:500;font-size:9.5px;letter-spacing:.08em;color:var(--muted)}
+  figure.fig .fig-body{padding:20px 22px 8px;overflow-x:auto}
+  figure.fig figcaption{padding:12px 22px 18px;font-size:12px;color:var(--muted);line-height:1.9;border-top:1px dotted var(--rule-soft)}
+  figure.fig figcaption b{color:var(--red)}
+
+  /* chart */
+  .chart svg{width:100%;min-width:640px;height:auto;display:block}
+  .chart .axis{font-family:var(--util);font-size:15px;fill:var(--muted);font-weight:600}
+  .chart .yr{font-family:var(--util);font-size:14px;fill:var(--muted);font-weight:600}
+  .chart .anno{font-family:var(--sans);font-size:14.5px;fill:var(--legacy);font-weight:700}
+  .chart .anno-s{font-family:var(--util);font-size:12.5px;fill:var(--muted);font-weight:600}
+  .chart .val{font-family:var(--util);font-size:17px;font-weight:800;fill:var(--red)}
+  .chart .val-b{font-family:var(--util);font-size:16px;font-weight:800;fill:var(--royal)}
+
+  /* champions frequency bars (Fig.02) */
+  .freqchart{padding:22px 26px 24px}
+  .freqrow{display:grid;grid-template-columns:130px 1fr 30px;gap:14px;align-items:center;padding:6px 0}
+  .freqrow .tname{font-family:var(--util);font-weight:700;font-size:11.5px;color:var(--legacy);text-align:right;letter-spacing:.02em}
+  .freqrow .track{height:22px;background:var(--paper2);border-radius:3px;overflow:hidden;position:relative}
+  .freqrow .fill{height:100%;border-radius:3px;transition:width 1s cubic-bezier(.2,.7,.2,1)}
+  .freqrow .cnt{font-family:var(--util);font-weight:800;font-size:13px;color:var(--red);text-align:left;font-variant-numeric:tabular-nums}
+  @media(max-width:560px){.freqrow{grid-template-columns:96px 1fr 26px;gap:9px}.freqrow .tname{font-size:10px}}
+
+  /* dynasty streak strip — 14 season cells */
+  .streak{margin-top:22px;display:flex;gap:3px;padding:0 26px 24px}
+  .streak .cell{flex:1;height:38px;border-radius:3px;display:flex;align-items:center;justify-content:center;
+    font-family:var(--util);font-weight:800;font-size:9px;color:#fff;position:relative;letter-spacing:.02em;min-width:0}
+  .streak .cell span{position:absolute;bottom:-17px;left:0;right:0;text-align:center;font-size:7.5px;color:var(--muted);font-weight:600}
+  @media(max-width:560px){.streak .cell{font-size:7px}.streak .cell span{display:none}}
+
+  /* big stat strip (points/pace) */
+  .datastrip{margin:34px 0 0;display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--rule);border-radius:6px;overflow:hidden;background:#fff}
+  .datastrip .cell{padding:20px 24px;border-right:1px solid var(--rule-soft)}
+  .datastrip .cell:last-child{border-right:none}
+  .datastrip .lab{font-family:var(--util);font-weight:700;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  .datastrip .fig-v{margin-top:8px;font-family:var(--util);font-weight:900;font-size:clamp(20px,2.6vw,30px);color:var(--legacy);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+  .datastrip .fig-v em{font-style:normal;color:var(--red)}
+  .datastrip .fig-v .arr{color:var(--muted);font-weight:600;margin:0 .18em;font-size:.7em}
+  @media(max-width:720px){.datastrip{grid-template-columns:1fr}.datastrip .cell{border-right:none;border-bottom:1px solid var(--rule-soft)}}
+
+  /* ============ ERA BAND (ch2) ============ */
+  /* proportional bar = the graphic that carries "duration"; text below is equal-width & readable */
+  .era-bar{margin-top:48px;display:flex;height:56px;border-radius:6px;overflow:hidden;border:1px solid var(--rule)}
+  .era-bar .b{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+    color:#fff;font-family:var(--util);font-weight:800;font-size:12px;letter-spacing:.04em;padding:0 4px;
+    border-right:1px solid rgba(255,255,255,.25)}
+  .era-bar .b:last-child{border-right:none}
+  .era-bar .b .yl{font-size:8.5px;font-weight:600;letter-spacing:.02em;opacity:.85;white-space:nowrap}
+  .era-bar .b .sn{font-size:15px;display:flex;align-items:baseline;gap:2px;white-space:nowrap;line-height:1}
+  .era-bar .b .sn small{font-size:8.5px;font-weight:600;letter-spacing:.02em;opacity:.9}
+  .era-bar-key{margin-top:9px;font-family:var(--util);font-weight:600;font-size:9.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--muted);text-align:right}
+  .eras{margin-top:26px;display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--rule);
+    border-radius:6px;overflow:hidden;background:#fff}
+  .era-col{padding:22px 20px 26px;border-right:1px solid var(--rule-soft);position:relative}
+  .era-col:last-child{border-right:none}
+  .era-col::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--seg,var(--royal))}
+  .era-col .idx{font-family:var(--disp);font-size:22px;color:transparent;-webkit-text-stroke:1px var(--rule);line-height:1}
+  .era-col .yrs{margin-top:12px;font-family:var(--util);font-weight:800;font-size:11px;letter-spacing:.04em;color:var(--red)}
+  .era-col h3{font-family:var(--serif);font-weight:900;font-size:16px;line-height:1.55;color:var(--legacy);margin:9px 0 10px}
+  .era-col p{font-size:12px;line-height:1.95;color:#4c5c74}
+  @media(max-width:920px){
+    .eras{grid-template-columns:1fr}
+    .era-col{border-right:none;border-bottom:1px solid var(--rule-soft)}
+    .era-col:last-child{border-bottom:none}
+    .era-bar .b .yl{display:none}}
+  @media(max-width:560px){.era-bar{height:46px}.era-bar .b{font-size:10px}.era-bar .b .sn{font-size:12px}}
+
+  /* ============ TABLE (champions ledger) ============ */
+  .ledger{width:100%;border-collapse:collapse;background:#fff;font-size:12.5px}
+  .ledger th{font-family:var(--util);font-weight:800;font-size:9.5px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--muted);text-align:left;padding:12px 14px;border-bottom:2px solid var(--legacy)}
+  .ledger td{padding:12px 14px;border-bottom:1px solid var(--rule-soft);vertical-align:top;color:#3a4a63;line-height:1.7}
+  .ledger tr:hover td{background:rgba(0,51,141,.035)}
+  .ledger .season{font-family:var(--util);font-weight:800;font-size:11.5px;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+  .ledger .champ{font-family:var(--disp);font-size:16.5px;letter-spacing:.02em;color:var(--legacy);text-transform:uppercase;white-space:nowrap}
+  .ledger .champ.w{color:var(--gsw-b)} .ledger .champ.l{color:var(--lak-p)}
+  .ledger .res{font-variant-numeric:tabular-nums;white-space:nowrap}
+  .ledger .kw{font-family:var(--serif);font-weight:700;color:var(--royal)}
+  .ledger tr{cursor:pointer}
+  .ledger .more{font-family:var(--util);font-weight:700;font-size:9px;letter-spacing:.1em;color:var(--red);opacity:0;transition:.2s;white-space:nowrap}
+  .ledger tr:hover .more{opacity:1}
+  .table-scroll{overflow-x:auto;border:1px solid var(--rule);border-radius:6px}
+  .table-scroll .ledger{min-width:760px}
+
+  /* ============ GENERATIONS (ch4) ============ */
+  .gens{margin-top:48px;border-top:2px solid var(--legacy)}
+  .gen{display:grid;grid-template-columns:150px 1fr;gap:clamp(18px,3.5vw,48px);
+    padding:26px 0;border-bottom:1px solid var(--rule-soft)}
+  .gen .era-no{font-family:var(--util);font-weight:900;font-size:13px;color:var(--royal);letter-spacing:.03em;line-height:1.55}
+  .gen .era-no small{display:block;font-weight:500;font-size:10.5px;color:var(--muted);letter-spacing:.06em;margin-top:3px}
+  .gen h3{font-family:var(--serif);font-weight:800;font-size:16.5px;color:var(--legacy);margin-bottom:7px}
+  .gen p{font-size:13px;line-height:2;color:#42526b}
+  @media(max-width:680px){.gen{grid-template-columns:1fr;gap:6px}}
+
+  /* two-column contrast blocks (ch5) */
+  .contrast{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:46px;
+    border:1px solid var(--rule);border-radius:6px;overflow:hidden;background:#fff}
+  .contrast .col{padding:28px 30px 30px}
+  .contrast .col:first-child{border-right:1px solid var(--rule-soft)}
+  .contrast .tag{font-family:var(--util);font-weight:800;font-size:10px;letter-spacing:.2em;text-transform:uppercase}
+  .contrast .col:first-child .tag{color:var(--gsw-b)}
+  .contrast .col:last-child .tag{color:var(--red)}
+  .contrast h3{font-family:var(--serif);font-weight:800;font-size:17.5px;color:var(--legacy);margin:10px 0 10px}
+  .contrast p{font-size:13px;line-height:2;color:#42526b}
+  @media(max-width:760px){.contrast{grid-template-columns:1fr}
+    .contrast .col:first-child{border-right:none;border-bottom:1px solid var(--rule-soft)}}
+
+  /* institutions (ch6) — timeline ledger, not cards */
+  .insti{margin-top:48px;border-top:2px solid var(--legacy)}
+  .ins{display:grid;grid-template-columns:170px 1fr;gap:clamp(18px,3.5vw,48px);
+    padding:24px 0;border-bottom:1px solid var(--rule-soft)}
+  .ins .when{font-family:var(--util);font-weight:800;font-size:12px;color:var(--red);letter-spacing:.04em;line-height:1.6;font-variant-numeric:tabular-nums}
+  .ins h3{font-family:var(--serif);font-weight:800;font-size:16.5px;color:var(--legacy);margin-bottom:6px}
+  .ins p{font-size:13px;line-height:2;color:#42526b;max-width:680px}
+  @media(max-width:680px){.ins{grid-template-columns:1fr;gap:5px}}
+
+  /* pull quote */
+  .pull{margin:52px 0 8px;padding:6px 0 6px clamp(22px,4vw,40px);border-left:3px solid var(--red)}
+  .pull p{font-family:var(--serif);font-weight:700;font-size:clamp(18px,2.6vw,24px);line-height:1.9;color:var(--legacy)}
+  .pull .who{margin-top:10px;font-family:var(--util);font-weight:600;font-size:10.5px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase}
+
+  /* ============ KOBE (ch8) ============ */
+  .kobe{position:relative;padding:100px 0 92px;background:#17102b;color:#e9e5f3;overflow:hidden}
+  .kobe::before{content:"";position:absolute;inset:0;opacity:.32;mix-blend-mode:soft-light;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='k'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23k)'/%3E%3C/svg%3E")}
+  .kobe::after{content:"";position:absolute;top:0;left:0;right:0;height:2px;
+    background:linear-gradient(90deg,transparent,var(--lak-g),transparent)}
+  .kobe .inner{position:relative;z-index:2}
+  .kobe .memorial-tag{font-family:var(--serif);font-weight:700;font-size:12px;letter-spacing:.42em;
+    color:var(--lak-g);margin-bottom:28px;padding-bottom:14px;border-bottom:1px solid rgba(253,185,39,.28)}
+  .kobe .en-kicker{font-family:var(--util);font-weight:800;font-size:11px;letter-spacing:.26em;
+    text-transform:uppercase;color:var(--lak-g);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+  .kobe .en-kicker::after{content:"";flex:0 0 44px;height:1px;background:var(--lak-p)}
+  .kobe h2{font-family:var(--serif);font-weight:900;font-size:clamp(26px,4vw,42px);line-height:1.4;color:#fff;max-width:760px}
+  .kobe .nums{display:flex;gap:clamp(28px,5vw,56px);margin:40px 0 6px;align-items:flex-end;flex-wrap:wrap}
+  .kobe .kn{font-family:var(--disp);font-size:clamp(52px,8vw,82px);line-height:.86;color:transparent;
+    -webkit-text-stroke:1.5px var(--lak-g);letter-spacing:.02em}
+  .kobe .kn.solid{color:var(--lak-g);-webkit-text-stroke:0}
+  .kobe .kn small{display:block;font-family:var(--sans);font-weight:500;font-size:11px;color:#b9aed6;letter-spacing:.1em;margin-top:12px;-webkit-text-stroke:0;line-height:1.4}
+  .kobe .lead{margin-top:28px;max-width:760px;font-size:15px;line-height:2.15;color:#d7d0e8;font-weight:500}
+  .kobe .prose p{color:#c3bad9;max-width:760px}
+  .kobe .prose p .g{color:var(--lak-g);font-weight:700}
+  .kobe .date-note{margin-top:34px;padding-top:18px;border-top:1px dotted rgba(255,255,255,.18);
+    font-family:var(--util);font-weight:600;font-size:10px;letter-spacing:.16em;color:#9d90c2;text-transform:uppercase;line-height:1.8}
+
+  /* ============ DEBATES (ch9) ============ */
+  .debates{margin-top:48px;display:flex;flex-direction:column}
+  .debate{border-top:1px solid var(--rule-soft);padding:26px 0;display:grid;
+    grid-template-columns:minmax(200px,.9fr) 1fr 40px 1fr;gap:clamp(14px,2.5vw,30px);align-items:start}
+  .debate:last-child{border-bottom:1px solid var(--rule-soft)}
+  .debate .topic small{display:block;font-family:var(--util);font-weight:800;font-size:9.5px;
+    letter-spacing:.16em;color:var(--red);text-transform:uppercase;margin-bottom:6px}
+  .debate .topic .t{font-family:var(--serif);font-weight:800;font-size:16px;color:var(--legacy);line-height:1.6}
+  .debate .side{font-size:12.5px;line-height:1.9;color:#42526b}
+  .debate .side b{display:block;font-family:var(--util);font-weight:800;font-size:9.5px;
+    letter-spacing:.14em;text-transform:uppercase;margin-bottom:5px}
+  .debate .side.a b{color:var(--royal)} .debate .side.b b{color:var(--red)}
+  .debate .vs{font-family:var(--disp);font-size:15px;color:transparent;-webkit-text-stroke:1px var(--rule);
+    align-self:center;text-align:center}
+  @media(max-width:860px){.debate{grid-template-columns:1fr}.debate .vs{display:none}}
+
+  /* ============ JAPAN (ch10) ============ */
+  .jp-profiles{margin-top:48px;display:grid;grid-template-columns:1fr 1fr 1fr;border:1px solid var(--rule);border-radius:6px;overflow:hidden;background:#fff}
+  .jp{padding:30px 28px 32px;border-right:1px solid var(--rule-soft);position:relative}
+  .jp:last-child{border-right:none}
+  .jp::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--red)}
+  .jp:nth-child(2)::before{background:var(--royal)} .jp:nth-child(3)::before{background:var(--legacy)}
+  .jp .route{font-family:var(--util);font-weight:800;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--royal)}
+  .jp h3{font-family:var(--serif);font-weight:900;font-size:24px;color:var(--legacy);margin:12px 0 2px;letter-spacing:.04em}
+  .jp .en{font-family:var(--util);font-weight:600;font-size:10.5px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;margin-bottom:14px}
+  .jp p{font-size:12.5px;line-height:2;color:#42526b}
+  .jp .fact{margin-top:14px;padding-top:12px;border-top:1px dotted var(--rule-soft);
+    font-family:var(--util);font-weight:700;font-size:10px;letter-spacing:.08em;color:var(--red)}
+  @media(max-width:860px){.jp-profiles{grid-template-columns:1fr}
+    .jp{border-right:none;border-bottom:1px solid var(--rule-soft)}.jp:last-child{border-bottom:none}}
+
+  /* ============ SYMBOLS (ch12) ============ */
+  .symbols{margin-top:48px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+    border:1px solid var(--rule);border-radius:6px;overflow:hidden;background:#fff}
+  .sym{padding:24px 22px 26px;border-right:1px solid var(--rule-soft)}
+  .sym:last-child{border-right:none}
+  .sym .cat{font-family:var(--util);font-weight:800;font-size:9.5px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--red);margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--legacy)}
+  .sym ul{list-style:none}
+  .sym li{font-size:12px;line-height:1.75;color:#42526b;padding:7px 0;border-bottom:1px dotted var(--rule-soft)}
+  .sym li:last-child{border-bottom:none}
+  .sym li b{color:var(--legacy);font-weight:700;display:block;font-size:12.5px}
+  @media(max-width:980px){.symbols{grid-template-columns:1fr 1fr}
+    .sym:nth-child(2){border-right:none}.sym{border-bottom:1px solid var(--rule-soft)}}
+  @media(max-width:560px){.symbols{grid-template-columns:1fr}.sym{border-right:none}}
+
+  /* ============ FUTURE (ch13) ============ */
+  .future{position:relative;padding:100px 0 96px;background:var(--legacy);color:#e6edf7;overflow:hidden}
+  .future::before{content:"";position:absolute;inset:0;opacity:.3;mix-blend-mode:soft-light;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E")}
+  .future::after{content:"";position:absolute;top:0;left:0;right:0;height:2px;
+    background:linear-gradient(90deg,var(--royal),var(--red))}
+  .future .wrap{position:relative;z-index:2}
+  .future .en-kicker{font-family:var(--util);font-weight:800;font-size:11px;letter-spacing:.26em;
+    text-transform:uppercase;color:#ff8ba0;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+  .future .en-kicker::after{content:"";flex:0 0 44px;height:1px;background:#4f6ea8}
+  .future h2{font-family:var(--serif);font-weight:900;font-size:clamp(26px,4vw,44px);line-height:1.32;color:#fff;max-width:860px}
+  .future .lead{margin-top:24px;max-width:760px;font-size:15px;line-height:2.15;color:#c4d2e6;font-weight:500}
+  .future .forces{margin-top:46px;border-top:1px solid rgba(255,255,255,.18)}
+  .future .force{display:grid;grid-template-columns:64px 200px 1fr;gap:clamp(14px,3vw,40px);
+    padding:20px 0;border-bottom:1px solid rgba(255,255,255,.1);align-items:baseline}
+  .future .force .fn{font-family:var(--disp);font-size:26px;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.35);line-height:1}
+  .future .force h4{font-family:var(--serif);font-weight:800;font-size:16.5px;color:#fff}
+  .future .force p{font-size:12.5px;line-height:1.95;color:#a9bad4}
+  @media(max-width:760px){.future .force{grid-template-columns:44px 1fr}
+    .future .force p{grid-column:2}}
+  .future .prose p{color:#c4d2e6;max-width:800px}
+  .future .prose p .r{color:#ff8ba0}
+  .future .closing{margin-top:44px;font-family:var(--serif);font-weight:700;
+    font-size:clamp(17px,2.4vw,21px);line-height:2;color:#fff;max-width:760px}
+
+  /* ============ TIMELINE ============ */
+  .tl-section{padding:90px 0 80px;border-top:1px solid var(--rule);background:var(--paper2)}
+  .tl-head{display:flex;justify-content:space-between;align-items:flex-end;gap:22px;flex-wrap:wrap}
+  .tl-hint{font-family:var(--util);font-weight:600;font-size:10px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--muted)}
+  .tl-hint b{color:var(--red)}
+  .tl-scroll{display:flex;overflow-x:auto;padding:40px 48px 42px;margin:8px -48px 0;
+    scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
+  .tl-scroll::-webkit-scrollbar{height:5px}
+  .tl-scroll::-webkit-scrollbar-thumb{background:var(--rule);border-radius:10px}
+  .tl-track{display:flex;position:relative;padding-top:4px}
+  .tl-track::before{content:"";position:absolute;top:88px;left:10px;right:10px;height:1px;background:var(--rule)}
+  .tl-card{flex:0 0 auto;width:188px;padding:0 14px;cursor:pointer;scroll-snap-align:center;position:relative;
+    transition:transform .25s}
+  .tl-card:hover{transform:translateY(-4px)}
+  .tl-card .yr2{font-family:var(--util);font-weight:800;font-size:11px;letter-spacing:.08em;
+    color:var(--muted);text-align:center;font-variant-numeric:tabular-nums}
+  .tl-card .tick{width:9px;height:9px;border-radius:50%;margin:12px auto 14px;background:var(--paper2);
+    border:2.5px solid var(--royal);position:relative;z-index:2;transition:.25s}
+  .tl-card.warriors .tick{border-color:var(--gsw-g);background:var(--gsw-b)}
+  .tl-card.lakers .tick{border-color:var(--lak-g);background:var(--lak-p)}
+  .tl-card .champ{font-family:var(--disp);font-size:25px;line-height:1;text-transform:uppercase;
+    text-align:center;color:var(--legacy);letter-spacing:.015em;transition:color .25s}
+  .tl-card .kw{display:block;font-family:var(--serif);font-weight:700;font-size:12.5px;text-align:center;
+    color:var(--royal);margin-top:9px;line-height:1.6}
+  .tl-card .open{display:block;text-align:center;margin-top:11px;font-family:var(--util);font-weight:700;
+    font-size:9px;letter-spacing:.16em;color:var(--red);text-transform:uppercase;opacity:0;transition:.25s}
+  .tl-card:hover .champ{color:var(--red)}
+  .tl-card:hover .tick{transform:scale(1.35)}
+  .tl-card:hover .open{opacity:1}
+  @media(max-width:720px){.tl-scroll{padding:36px 22px;margin:8px -22px 0}}
+
+  /* ============ MODAL ============ */
+  .veil{position:fixed;inset:0;z-index:120;display:none;background:rgba(6,16,32,.6);
+    backdrop-filter:blur(5px);align-items:center;justify-content:center;padding:22px;opacity:0;transition:opacity .28s}
+  .veil.on{display:flex;opacity:1}
+  .modal{width:min(660px,100%);max-height:88vh;overflow-y:auto;background:#fff;border-radius:8px;
+    position:relative;transform:translateY(16px);transition:transform .32s cubic-bezier(.2,.8,.2,1);
+    box-shadow:0 40px 90px -28px rgba(0,10,30,.55);border-top:5px solid var(--royal)}
+  .veil.on .modal{transform:none}
+  .modal.warriors{border-top-color:var(--gsw-g)}
+  .modal.lakers{border-top-color:var(--lak-g)}
+  .modal .m-inner{padding:38px 42px 40px}
+  .modal .close{position:absolute;top:16px;right:18px;width:32px;height:32px;border-radius:50%;
+    border:1px solid var(--rule);background:#fff;color:var(--muted);font-size:15px;cursor:pointer;transition:.2s;z-index:3}
+  .modal .close:hover{background:var(--red);border-color:var(--red);color:#fff}
+  .modal .m-season{font-family:var(--util);font-weight:800;font-size:10.5px;letter-spacing:.24em;
+    color:var(--red);text-transform:uppercase}
+  .modal .m-champ{font-family:var(--disp);font-size:clamp(34px,6vw,50px);line-height:1;
+    color:var(--legacy);text-transform:uppercase;margin:10px 0 2px}
+  .modal.warriors .m-champ{color:var(--gsw-b)} .modal.lakers .m-champ{color:var(--lak-p)}
+  .modal .m-team{font-size:12px;color:var(--muted);font-weight:500;margin-bottom:4px}
+  .modal .m-kw{font-family:var(--serif);font-weight:700;font-size:15.5px;color:var(--royal);margin-bottom:20px}
+  .modal.lakers .m-kw{color:var(--lak-p)}
+  .modal .m-body p{font-size:13.5px;line-height:2.05;color:#3a4a63;margin-bottom:14px}
+  .modal .m-meta{margin-top:20px;border-top:2px solid var(--legacy);display:grid;grid-template-columns:1fr 1fr 1fr;gap:0}
+  .modal .m-meta .item{padding:13px 12px 4px;border-right:1px dotted var(--rule-soft)}
+  .modal .m-meta .item:last-child{border-right:none}
+  .modal .m-meta .k{font-family:var(--util);font-weight:800;font-size:8.5px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+  .modal .m-meta .v{font-size:12.5px;color:var(--legacy);font-weight:700;line-height:1.6}
+  @media(max-width:600px){.modal .m-inner{padding:30px 24px 32px}
+    .modal .m-meta{grid-template-columns:1fr}.modal .m-meta .item{border-right:none;border-bottom:1px dotted var(--rule-soft)}}
+
+  /* ============ COLOPHON ============ */
+  .colophon{padding:66px 0 58px;border-top:2px solid var(--legacy)}
+  .colophon .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,5vw,80px)}
+  @media(max-width:760px){.colophon .grid{grid-template-columns:1fr}}
+  .colophon h3{font-family:var(--util);font-weight:800;font-size:10.5px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--red);margin-bottom:16px}
+  .colophon ol{list-style:none;counter-reset:src}
+  .colophon li{counter-increment:src;font-size:11.5px;line-height:1.85;color:var(--muted);
+    padding:7px 0 7px 26px;position:relative;border-bottom:1px dotted var(--rule-soft)}
+  .colophon li::before{content:counter(src,decimal-leading-zero);position:absolute;left:0;top:8px;
+    font-family:var(--util);font-weight:800;font-size:9.5px;color:var(--red)}
+  .colophon .note p{font-size:11.5px;line-height:2;color:var(--muted)}
+  footer.end{padding:52px 48px 46px;background:var(--legacy);text-align:center}
+  footer.end .t{font-family:var(--disp);font-size:clamp(26px,4.5vw,44px);color:#fff;text-transform:uppercase;line-height:1}
+  footer.end .t em{font-style:normal;color:var(--red)}
+  footer.end .s{font-family:var(--serif);font-weight:700;font-size:12.5px;color:#8fa2bd;margin-top:14px;letter-spacing:.12em}
+  footer.end .m{font-family:var(--util);font-weight:600;font-size:9.5px;letter-spacing:.24em;color:#5d7396;margin-top:20px;text-transform:uppercase}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="bar">
+    <div class="brand">NBA Chronicle <em>/</em> 2013–2026</div>
+    <nav>
+      <a href="#ch1">序論</a><a href="#ch2">時代区分</a><a href="#ch3">勢力図</a><a href="#timeline">年表</a><a href="#ch4">スター</a><a href="#ch5">戦術</a><a href="#ch6">制度</a><a href="#ch7">文化</a><a href="#ch8">追悼</a><a href="#ch9">論争</a><a href="#ch10">日本</a><a href="#ch12">象徴</a><a href="#ch13">展望</a>
+    </nav>
+    <div class="issue">Special Issue · 2026.07</div>
+    <button class="menu-btn" id="menuBtn">Index</button>
+  </div>
+</header>
+
+<div class="drawer" id="drawer">
+  <button class="x" id="drawerX">✕</button>
+  <a href="#ch1"><span class="no">01</span><span class="t">序論 — NBAは何が変わったのか</span></a>
+  <a href="#ch2"><span class="no">02</span><span class="t">時代区分で見るNBA</span></a>
+  <a href="#ch3"><span class="no">03</span><span class="t">王者と勢力図の変遷</span></a>
+  <a href="#timeline"><span class="no">—</span><span class="t">年表 — 王者の系譜</span></a>
+  <a href="#ch4"><span class="no">04</span><span class="t">スター選手の世代交代</span></a>
+  <a href="#ch5"><span class="no">05</span><span class="t">戦術の進化</span></a>
+  <a href="#ch6"><span class="no">06</span><span class="t">制度・ビジネス・メディア</span></a>
+  <a href="#ch7"><span class="no">07</span><span class="t">カルチャーとSNS時代</span></a>
+  <a href="#ch8"><span class="no">08</span><span class="t">喪失と記憶</span></a>
+  <a href="#ch9"><span class="no">09</span><span class="t">論争で見る空気感</span></a>
+  <a href="#ch10"><span class="no">10</span><span class="t">日本から見たNBA</span></a>
+  <a href="#ch12"><span class="no">12</span><span class="t">象徴の整理</span></a>
+  <a href="#ch13"><span class="no">13</span><span class="t">次のNBAはどこへ向かうのか</span></a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="grid-lines"></div>
+  <div class="wrap inner">
+    <div class="kicker-row rv">
+      <div class="meta">特集 <b>·</b> A Chronicle of Change</div>
+      <div class="meta r">全13章 <b>·</b> 14 Seasons <b>·</b> 11 Champions</div>
+    </div>
+    <div class="title-row">
+      <h1 class="rv">2013<span class="dash">—</span>2026</h1>
+      <div class="subtitle rv">NBAは、<span class="accent">何が変わった</span>のか。</div>
+      <p class="lede rv">
+        優勝チームの入れ替わりではない。<b>スターが支配するリーグ</b>から、戦術・編成・制度・メディア・カルチャーが複雑に絡み合うリーグへ——。14年で、NBAはほとんど別の競技になった。その変遷の全体像を、データと物語の両面から辿る。
+      </p>
+    </div>
+    <div class="statline rv">
+      <div class="stat"><div class="v num">14</div><div class="k">シーズン</div></div>
+      <div class="stat"><div class="v num"><em>11</em></div><div class="k">王者の顔ぶれ</div></div>
+      <div class="stat"><div class="v num">20.0<span style="font-size:.55em;color:var(--muted)"> → </span><em>37.0</em></div><div class="k">平均3P試投数(本/試合)*</div></div>
+      <div class="stat"><div class="v num">98.1<span style="font-size:.55em;color:var(--muted)"> → </span><em>115.6</em></div><div class="k">平均得点*</div></div>
+      <div class="stat"><div class="v num"><em>8</em></div><div class="k">連続で異なる王者(2019–26)</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- INDEX / TOC -->
+<section class="toc">
+  <div class="wrap">
+    <div class="head rv">
+      <h2>目次 — INDEX</h2>
+      <div class="meta">2012-13 → 2025-26</div>
+    </div>
+    <ol class="rv">
+      <li><a href="#ch1"><span class="no">01</span><span class="t">序論 — NBAは何が変わったのか</span><span class="dots"></span><span class="pg">Intro</span></a></li>
+      <li><a href="#ch2"><span class="no">02</span><span class="t">時代区分で見るNBA</span><span class="dots"></span><span class="pg">Eras</span></a></li>
+      <li><a href="#ch3"><span class="no">03</span><span class="t">王者と勢力図の変遷</span><span class="dots"></span><span class="pg">Powers</span></a></li>
+      <li><a href="#timeline"><span class="no">11</span><span class="t">年表 — 王者の系譜(シーズン別)</span><span class="dots"></span><span class="pg">Ledger</span></a></li>
+      <li><a href="#ch4"><span class="no">04</span><span class="t">スター選手の世代交代</span><span class="dots"></span><span class="pg">Stars</span></a></li>
+      <li><a href="#ch5"><span class="no">05</span><span class="t">戦術の進化</span><span class="dots"></span><span class="pg">Tactics</span></a></li>
+      <li><a href="#ch6"><span class="no">06</span><span class="t">制度・ビジネス・メディアの変化</span><span class="dots"></span><span class="pg">System</span></a></li>
+      <li><a href="#ch7"><span class="no">07</span><span class="t">NBAカルチャーとSNS時代</span><span class="dots"></span><span class="pg">Culture</span></a></li>
+      <li><a href="#ch8"><span class="no">08</span><span class="t">喪失と記憶 — コービー・ブライアント</span><span class="dots"></span><span class="pg">Memoria</span></a></li>
+      <li><a href="#ch9"><span class="no">09</span><span class="t">論争で見るNBAの空気感</span><span class="dots"></span><span class="pg">Debates</span></a></li>
+      <li><a href="#ch10"><span class="no">10</span><span class="t">日本から見たNBA</span><span class="dots"></span><span class="pg">Japan</span></a></li>
+      <li><a href="#ch12"><span class="no">12</span><span class="t">象徴の整理 — 選手・チーム・試合</span><span class="dots"></span><span class="pg">Icons</span></a></li>
+      <li><a href="#ch13"><span class="no">13</span><span class="t">次のNBAはどこへ向かうのか</span><span class="dots"></span><span class="pg">Next</span></a></li>
+    </ol>
+  </div>
+</section>
+
+<!-- CHAPTER 01 -->
+<section class="chapter" id="ch1" style="border-top:1px solid var(--rule)">
+  <div class="wrap">
+    <div class="ch-head rv">
+      <div class="ch-rail"><div class="big-no">01</div><div class="kicker">序論</div></div>
+      <div class="ch-body">
+        <div class="en-kicker">What Changed</div>
+        <h2>王朝は生まれ、終わり、<br>バスケットボールの見られ方まで変わった。</h2>
+        <p class="lead">2012-13シーズンの王者はマイアミ・ヒート。レブロン、ウェイド、ボッシュのビッグ3がリーグの中心にいた。しかし2025-26シーズンの王者はニューヨーク・ニックス。相手はビクター・ウェンバンヤマを擁するサンアントニオ・スパーズだった。この間に入れ替わったのは、優勝チームの名前だけではない。</p>
+      </div>
+    </div>
+    <div class="prose rv">
+      <p>この期間の変化を一言で言えば、NBAは<span class="b">「スターが支配するリーグ」</span>から、<span class="b">「スター、戦術、編成、制度、メディア、カルチャーが複雑に絡み合うリーグ」</span>へ変わった。もちろんレブロン、カリー、デュラント、ヤニス、ヨキッチ、SGA、ウェンバンヤマのような超大物は常に中心にいた。ただし、2010年代前半のように“スターを集めれば勝てる”という単純な構図ではなくなった。スターの横に誰を置くのか。キャップをどう管理するのか。スリーをどれだけ打つのか。守備でどこまでスイッチできるのか。勝利には、より総合的な設計力が求められるようになった。</p>
+    </div>
+
+    <!-- FIG.01 — the signature: real 3PA data -->
+    <figure class="fig rv">
+      <div class="fig-head">
+        <div>
+          <span class="fig-no">Fig. 01</span>&ensp;
+          <span class="fig-title">リーグ平均3ポイント試投数の変遷(1試合あたり・レギュラーシーズン)</span>
+        </div>
+        <div class="fig-src">Source: Basketball-Reference — NBA League Averages</div>
+      </div>
+      <div class="fig-body chart">
+        <svg viewBox="0 0 1000 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="3ポイント試投数 2012-13の20.0本から2025-26の37.0本への推移">
+          <!-- plot area: x 78→960, y 60(=40本)→300(=20本); 12 units/本 -->
+          <g stroke="rgba(0,34,68,.09)" stroke-width="1">
+            <line x1="78" y1="300" x2="960" y2="300"/>
+            <line x1="78" y1="240" x2="960" y2="240"/>
+            <line x1="78" y1="180" x2="960" y2="180"/>
+            <line x1="78" y1="120" x2="960" y2="120"/>
+            <line x1="78" y1="60"  x2="960" y2="60"/>
+          </g>
+          <g class="axis" text-anchor="end">
+            <text x="66" y="305">20</text><text x="66" y="245">25</text>
+            <text x="66" y="185">30</text><text x="66" y="125">35</text><text x="66" y="65">40</text>
+          </g>
+          <text class="axis" x="66" y="34" text-anchor="end" style="font-size:11px">本</text>
+          <!-- data: 20.0,21.5,22.4,24.1,27.0,29.0,32.0,34.1,34.6,35.2,34.2,35.1,37.6,37.0 -->
+          <!-- y = 300 - (v-20)*12 -->
+          <path d="M78,300 145,282 213,271 280,251 348,216 415,192 483,156 550,131 618,125 685,118 753,130 820,119 888,89 960,96 V320 H78 Z"
+                fill="rgba(0,51,141,.06)"/>
+          <polyline points="78,300 145,282 213,271 280,251 348,216 415,192 483,156 550,131 618,125 685,118 753,130 820,119 888,89 960,96"
+                    fill="none" stroke="#00338D" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+          <!-- start point + label (below-left, clear zone) -->
+          <circle cx="78" cy="300" r="5.5" fill="#fff" stroke="#00338D" stroke-width="3"/>
+          <text class="val-b" x="78" y="332" text-anchor="start">20.0<tspan style="font-size:11px" dx="2">本</tspan></text>
+          <!-- Warriors 2015: annotation placed LOW-LEFT in empty area, connector down -->
+          <circle cx="213" cy="263" r="5" fill="#00338D"/>
+          <line x1="213" y1="263" x2="213" y2="360" stroke="rgba(0,34,68,.28)" stroke-width="1" stroke-dasharray="3 3"/>
+          <g transform="translate(150,372)">
+            <rect x="0" y="0" width="215" height="46" rx="4" fill="#fff" stroke="rgba(0,34,68,.16)"/>
+            <text class="anno" x="14" y="20">ウォリアーズ初優勝</text>
+            <text class="anno-s" x="14" y="38">2014-15 · 22.4本</text>
+          </g>
+          <!-- Peak 2025: annotation top-right area, above the peak, connector up -->
+          <circle cx="888" cy="89" r="5.5" fill="#fff" stroke="#C60C30" stroke-width="3"/>
+          <g transform="translate(632,20)">
+            <rect x="0" y="0" width="180" height="44" rx="4" fill="#fff" stroke="rgba(198,12,48,.3)"/>
+            <text class="anno" x="14" y="19" style="fill:#C60C30">ピーク 37.6本</text>
+            <text class="anno-s" x="14" y="36">2024-25 で頭打ちに</text>
+          </g>
+          <line x1="812" y1="42" x2="888" y2="82" stroke="rgba(198,12,48,.35)" stroke-width="1" stroke-dasharray="3 3"/>
+          <!-- end point 37.0 -->
+          <circle cx="960" cy="96" r="6" fill="#C60C30"/>
+          <text class="val" x="954" y="86" text-anchor="end">37.0</text>
+          <!-- x labels -->
+          <g class="yr" text-anchor="middle">
+            <text x="78" y="342">'13</text><text x="213" y="342">'15</text><text x="348" y="342">'17</text>
+            <text x="483" y="342">'19</text><text x="618" y="342">'21</text><text x="753" y="342">'23</text>
+            <text x="888" y="342">'25</text><text x="960" y="342">'26</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption>2012-13の<b>20.0本</b>から一貫して増え続け、2024-25に<b>37.6本</b>でピークに到達。2025-26は<b>37.0本</b>と、初めて明確な「頭打ち」を見せた。数字の上昇はコートの間隔、ドライブの価値、ビッグマンの役割、守備の設計まで変えた——ペイントを制圧する競技であると同時に、スペースを制圧する競技になった。</figcaption>
+    </figure>
+
+    <div class="datastrip rv">
+      <div class="cell"><div class="lab">League Avg. Points</div><div class="fig-v num">98.1<span class="arr">→</span><em>115.6</em></div></div>
+      <div class="cell"><div class="lab">Pace (Possessions/48min)</div><div class="fig-v num">92.0<span class="arr">→</span><em>99.4</em></div></div>
+      <div class="cell"><div class="lab">3P Attempts</div><div class="fig-v num">20.0<span class="arr">→</span><em>37.0</em></div></div>
+    </div>
+
+    <div class="prose rv" style="margin-top:40px">
+      <p>もっとも、この14年間で変わったのは、数字で示せることばかりではない。<span class="r">2020年は、NBAが喪失を経験した年</span>でもあった。同年1月、コービー・ブライアントと娘のジアナさんがヘリコプター事故で亡くなる。その数週間後、NBAはコロナ禍でシーズンを中断し、バブルという異例の環境で再開した。2020年は、NBAが感情的にも制度的にも、これまでの当たり前を失った年だった。</p>
+      <p>さらにNBAは、見るものとしても変わった。テレビ中継だけでなく、SNS、YouTube、TikTok、ポッドキャスト、選手個人の発信、インサイダー報道がファンの体験を作るようになった。2024年にはDisney、NBCUniversal、Amazon Prime Videoとの11年メディア契約が発表され、NBAはより配信時代へ踏み出している。</p>
+      <p>だからこの企画で追うべきなのは、「誰が勝ったか」だけではない。<span class="b">「NBAはどんなリーグへ変わっていったのか」</span>である。</p>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 02 -->
+<section class="chapter" id="ch2">
+  <div class="wrap">
+    <div class="ch-head rv">
+      <div class="ch-rail"><div class="big-no">02</div><div class="kicker">時代区分</div></div>
+      <div class="ch-body">
+        <div class="en-kicker">Five Eras</div>
+        <h2>14年を、5つの時代で読む。</h2>
+        <p class="lead">レブロンの時代に始まり、カリーが変えた時代を経て、ヨキッチやヤニスによる国際化を通り、SGA・ブランソン・ウェンバンヤマたちの新しい時代へ。下の帯は各時代の長さ(シーズン数)を示している。</p>
+      </div>
+    </div>
+    <!-- proportional bar = graphic carrying duration -->
+    <div class="era-bar rv">
+      <div class="b" style="flex:2;background:var(--legacy)"><span class="sn">2<small>シーズン</small></span><span class="yl">2012–14</span></div>
+      <div class="b" style="flex:5;background:var(--gsw-b)"><span class="sn">5<small>シーズン</small></span><span class="yl">2014–19</span></div>
+      <div class="b" style="flex:1;background:var(--lak-p)"><span class="sn">1<small>シーズン</small></span><span class="yl">2019–20</span></div>
+      <div class="b" style="flex:3;background:var(--royal)"><span class="sn">3<small>シーズン</small></span><span class="yl">2020–23</span></div>
+      <div class="b" style="flex:3;background:var(--red)"><span class="sn">3<small>シーズン</small></span><span class="yl">2023–26</span></div>
+    </div>
+    <div class="era-bar-key rv">■ 帯の幅 = 各時代のシーズン数(計14)</div>
+    <!-- equal-width readable columns -->
+    <div class="eras rv">
+      <div class="era-col" style="--seg:var(--legacy)">
+        <div class="idx">01</div>
+        <div class="yrs">2012-13 → 13-14</div>
+        <h3>ヒート終盤と<br>スパーズの完成形</h3>
+        <p>2013年はヒートが第7戦の死闘を制し頂点を維持。翌年スパーズが4-1で雪辱し、ダンカン、パーカー、ジノビリ、ポポビッチのチームバスケットが集大成を示した。</p>
+      </div>
+      <div class="era-col" style="--seg:var(--gsw-b)">
+        <div class="idx">02</div>
+        <div class="yrs">2014-15 → 18-19</div>
+        <h3>ウォリアーズ革命</h3>
+        <p>スリー、スペーシング、スモールボール、ボールムーブ。NBAの勝ち方を変えた。73勝、KD加入、連覇。5年連続ファイナル進出、キャバリアーズとの4年連続対決という史上初の構図も生んだ。</p>
+      </div>
+      <div class="era-col" style="--seg:var(--lak-p)">
+        <div class="idx">03</div>
+        <div class="yrs">2019-20</div>
+        <h3>異例のNBA</h3>
+        <p>コービーの死、コロナ中断、バブル、レイカーズ優勝。NBA史でも例外的な、たった1シーズンで区切られる特別な年。</p>
+      </div>
+      <div class="era-col" style="--seg:var(--royal)">
+        <div class="idx">04</div>
+        <div class="yrs">2020-21 → 22-23</div>
+        <h3>王朝後の多極化</h3>
+        <p>バックス、ウォリアーズ、ナゲッツがそれぞれ異なる設計思想で優勝。ひとつの絶対王者が消え、毎年違う答えが出る時代へ。</p>
+      </div>
+      <div class="era-col" style="--seg:var(--red)">
+        <div class="idx">05</div>
+        <div class="yrs">2023-24 → 25-26</div>
+        <h3>新世代と再編</h3>
+        <p>セルティックス、サンダー、ニックスが王者に。テイタム、SGA、ブランソン、そしてウェンバンヤマ。ビッグマーケット復権と新時代の入口が重なる。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 03 -->
+<section class="chapter" id="ch3">
+  <div class="wrap">
+    <div class="ch-head rv">
+      <div class="ch-rail"><div class="big-no">03</div><div class="kicker">勢力図</div></div>
+      <div class="ch-body">
+        <div class="en-kicker">Powers &amp; Pretenders</div>
+        <h2>優勝した1チームの背後で、<br>いくつもの物語が同時に動いていた。</h2>
+        <p class="lead">優勝チームだけを並べると、NBAは毎年ひとつの答えを出しているように見える。しかし本当に面白いのは、その背後にある勢力図の変化である。リーグの問いは「レブロンを倒せるのか」「ウォリアーズを止められるのか」から、次第に流動化していった。</p>
+      </div>
+    </div>
+    <div class="prose rv">
+      <p>2010年代後半のウォリアーズ王朝は、勢力図を一極化させた。デュラント加入後は、健康であればほとんど攻略不可能に見えた。その時代、ロケッツはハーデンとポールでスイッチ守備と大量のスリーに対抗し(2018年西決勝は第7戦までもつれた)、キャバリアーズはレブロンを軸にファイナルへ出続け、スパーズはカワイを中心に次の形を探した。</p>
+    </div>
+
+    <!-- FIG.02 — champions frequency -->
+    <figure class="fig rv">
+      <div class="fig-head">
+        <div><span class="fig-no">Fig. 02</span>&ensp;<span class="fig-title">優勝回数(2012-13 → 2025-26 の14シーズン)</span></div>
+        <div class="fig-src">4回の王朝が1、あとは分散</div>
+      </div>
+      <div class="fig-body freqchart">
+        <div class="freqrow"><div class="tname">ウォリアーズ</div><div class="track"><div class="fill" style="width:100%;background:#1D428A"></div></div><div class="cnt">4</div></div>
+        <div class="freqrow"><div class="tname">ヒート</div><div class="track"><div class="fill" style="width:25%;background:#98002E"></div></div><div class="cnt">1</div></div>
+        <div class="freqrow"><div class="tname">スパーズ</div><div class="track"><div class="fill" style="width:25%;background:#8A8D8F"></div></div><div class="cnt">1</div></div>
+        <div class="freqrow"><div class="tname">キャバリアーズ</div><div class="track"><div class="fill" style="width:25%;background:#860038"></div></div><div class="cnt">1</div></div>
+        <div class="freqrow"><div class="tname">ラプターズ</div><div class="track"><div class="fill" style="width:25%;background:#CE1141"></div></div><div class="cnt">1</div></div>
+        <div class="freqrow"><div class="tname">レイカーズ</div><div class="track"><div class="fill" style="width:25%;background:#552583"></div></div><div class="cnt">1</div></div>
+        <div class="freqrow"><div class="tname">バックス</div><div class="track"><div class="fill" style="width:25%;background:#00471B"></div></div><div class="cnt">1</div></div>
+        <div class="freqrow"><div class="tname">ナゲッツ</div><div class="track"><div class="fill" style="width:25%;background:#0E2240"></div></div><div class="cnt">1</div></div>
+        <div class="freqrow"><div class="tname">セルティックス</div><div class="track"><div class="fill" style="width:25%;background:#007A33"></div></div><div class="cnt">1</div></div>
+        <div class="freqrow"><div class="tname">サンダー</div><div class="track"><div class="fill" style="width:25%;background:#007AC1"></div></div><div class="cnt">1</div></div>
+        <div class="freqrow"><div class="tname">ニックス</div><div class="track"><div class="fill" style="width:25%;background:#F58426"></div></div><div class="cnt">1</div></div>
+      </div>
+      <figcaption>ウォリアーズが14シーズン中<b>4度</b>の頂点。残る10回は10チームに分散した。とりわけ2019年以降は、下の帯が示すように<b>8年連続で異なる王者</b>が生まれている。</figcaption>
+      <div class="streak">
+        <div class="cell" style="background:#98002E">HEA<span>'13</span></div>
+        <div class="cell" style="background:#6E7276">SAS<span>'14</span></div>
+        <div class="cell" style="background:#1D428A">GSW<span>'15</span></div>
+        <div class="cell" style="background:#860038">CLE<span>'16</span></div>
+        <div class="cell" style="background:#1D428A">GSW<span>'17</span></div>
+        <div class="cell" style="background:#1D428A">GSW<span>'18</span></div>
+        <div class="cell" style="background:#CE1141">TOR<span>'19</span></div>
+        <div class="cell" style="background:#552583">LAL<span>'20</span></div>
+        <div class="cell" style="background:#00471B">MIL<span>'21</span></div>
+        <div class="cell" style="background:#1D428A">GSW<span>'22</span></div>
+        <div class="cell" style="background:#0E2240">DEN<span>'23</span></div>
+        <div class="cell" style="background:#007A33">BOS<span>'24</span></div>
+        <div class="cell" style="background:#007AC1">OKC<span>'25</span></div>
+        <div class="cell" style="background:#F58426">NYK<span>'26</span></div>
+      </div>
+    </figure>
+
+    <div class="prose rv">
+      <p>2019年以降、勢力図は一気に流動化する。ラプターズはカワイを1年だけ擁して優勝、レイカーズは2020年に頂点、バックスは2021年、ウォリアーズは2022年に復活、ナゲッツは2023年に初優勝。<strong>2019年から2026年まで、8年連続で異なるチームが王者になった。</strong>リーグは「多極化」の時代に入った。</p>
+    </div>
+    <div class="pull rv">
+      <p>優勝できなかった強豪も、時代を形づくった。ハーデンのロケッツ、CP3のサンズ、ドンチッチのマーベリックス、エンビードのシクサーズ、バトラーのヒート——届かなかったチームにも、その時代のNBAは刻まれている。</p>
+      <div class="who">Chapter 03 — The Contenders</div>
+    </div>
+    <div class="prose rv">
+      <p>そして再建から戻ってきたチームの物語がある。2024年、セルティックスは長年の積み上げを結実させた。2025年、サンダーはドラフト・育成・柔軟な編成が報われた。2026年、ニックスは長い低迷を経て、ブランソンを中心にニューヨークのバスケットボール熱を取り戻した。王者史とは、支配・挑戦・崩壊・再建が同時に走る歴史である。</p>
+    </div>
+  </div>
+</section>
+<!-- TIMELINE / LEDGER (integrates ch.11) -->
+<section class="tl-section" id="timeline">
+  <div class="wrap">
+    <div class="tl-head rv">
+      <div>
+        <div class="en-kicker" style="font-family:var(--util);font-weight:800;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--royal);margin-bottom:14px;display:flex;align-items:center;gap:12px">The Champions Ledger<span style="flex:0 0 44px;height:1px;background:var(--red)"></span></div>
+        <h2 style="font-family:var(--serif);font-weight:900;font-size:clamp(24px,3.4vw,36px);line-height:1.4;color:var(--legacy)">年表 — 14年、11の王者。</h2>
+      </div>
+      <div class="tl-hint">← Scroll · 各シーズンを<b>タップで詳細</b> →</div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="tl-scroll"><div class="tl-track" id="tlTrack"></div></div>
+  </div>
+  <div class="wrap">
+    <div class="meta rv" style="margin-bottom:14px">Ledger — 全シーズン一覧(行をタップで詳細)</div>
+    <div class="table-scroll rv">
+      <table class="ledger" id="ledger">
+        <thead><tr>
+          <th>Season</th><th>Champion</th><th>Result</th><th>Finals MVP</th><th>その年が残したもの</th><th></th>
+        </tr></thead>
+        <tbody><!-- injected --></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 04 -->
+<section class="chapter" id="ch4">
+  <div class="wrap">
+    <div class="ch-head rv">
+      <div class="ch-rail"><div class="big-no">04</div><div class="kicker">世代交代</div></div>
+      <div class="ch-body">
+        <div class="en-kicker">Changing of the Guard</div>
+        <h2>レブロンが長く残り続ける中で、<br>その周囲の主役が何度も入れ替わった。</h2>
+        <p class="lead">2013年のNBAは、まだレブロンが明確な中心だった。周囲にはKD、カーメロ、CP3、ウェイド、ダンカン、コービー、ノビツキー——2000年代のスターがまだ大きな影響力を持つリーグに、割って入ったのがステフィン・カリーである。</p>
+      </div>
+    </div>
+    <div class="gens rv">
+      <div class="gen">
+        <div class="era-no">2013–<small>時代の起点</small></div>
+        <div><h3>レブロン・ジェームズと2000年代世代</h3>
+        <p>ヒートで連覇し、攻守両面でリーグの頂点に。KD、カーメロ、CP3、ウェイド、ダンカン、コービー、ノビツキーら、前の時代のスターがまだ現役の重みを持っていた。レブロンはこの後も2020年にレイカーズで優勝し、2020年代半ばまでリーグの重要人物であり続ける——「終わった」のではなく「残り続けた」ことが、この世代交代の特異さである。</p></div>
+      </div>
+      <div class="gen">
+        <div class="era-no">2010s 中盤<small>距離の革命</small></div>
+        <div><h3>ステフィン・カリー</h3>
+        <p>単に「スリーが上手い選手」ではない。遠くから打つこと自体を戦術に変えた。ドリブルからでも、トランジションでも、スクリーンを使っても、少しのズレがあれば打つ。守備はハーフライン近くからプレッシャーを受けるようになり、コートの広がり方そのものが変わった。クレイ、ドレイモンド、KDとともに2010年代中盤のNBAの顔になった。</p></div>
+      </div>
+      <div class="gen">
+        <div class="era-no">国際化の波<small>センターの再定義</small></div>
+        <div><h3>ヤニス / ヨキッチ / エンビード / ドンチッチ</h3>
+        <p>国際色の強いスターが中心へ。特にヨキッチの台頭はセンター像を変えた。ポストから、エルボーから、トップから、あらゆる位置でオフェンスを組み立てる。ビッグマンがチームの司令塔になる時代を、彼は完全に証明した。ヤニスはフィジカルと成長の物語を、ドンチッチは10代からの完成度を、それぞれ体現した。</p></div>
+      </div>
+      <div class="gen">
+        <div class="era-no">2020s 半ば<small>新しい主役</small></div>
+        <div><h3>SGA / テイタム / エドワーズ / ブランソン / ウェンバンヤマ</h3>
+        <p>SGAはスピードと減速、ミドルとリムアタックを組み合わせる現代型ガード。テイタムとブラウンは大型ウイングの二枚看板。ブランソンはサイズに頼らず、フットワーク、角度、コンタクト、クラッチ力でニックスを押し上げた。ウェンバンヤマは、シュート、ハンドリング、リムプロテクト、サイズを兼ね備えた、これまでの分類に収まりきらない存在である。</p></div>
+      </div>
+    </div>
+    <div class="prose rv" style="margin-top:36px">
+      <p>スター選手の価値も変わった。かつては得点王、MVP、アイソレーションの強さがスター性の中心だった。だがこの時代には、<strong>守備で複数ポジションを守れること、プレーメイクできること、スリーを打てること、編成に耐えられる契約構造であること、SNSやメディアで物語を持つこと</strong>まで、スターの条件に含まれるようになった。スターはコート上の存在であると同時に、チーム作りとリーグの物語を動かす存在になった。</p>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 05 -->
+<section class="chapter" id="ch5">
+  <div class="wrap">
+    <div class="ch-head rv">
+      <div class="ch-rail"><div class="big-no">05</div><div class="kicker">戦術進化</div></div>
+      <div class="ch-body">
+        <div class="en-kicker">The Tactical Shift</div>
+        <h2>3Pの増加の先にあったのは、<br>「全員が複数の役割を持つ時代」だった。</h2>
+        <p class="lead">最もわかりやすい変化は3ポイントの増加である。2012-13の1試合平均20.0本から、2024-25には37.6本まで増え、2025-26は37.0本と初めて頭打ちの気配を見せた(Fig.01)。だがこれは単なるシュート選択の変化ではなく、NBAの空間設計が根本から変わったことを意味している。</p>
+      </div>
+    </div>
+    <div class="contrast rv">
+      <div class="col">
+        <div class="tag">Golden State — 空間の革命</div>
+        <h3>スモールボールの再定義</h3>
+        <p>カリーとクレイのシュート力が守備を外へ引き伸ばし、ドレイモンドは守備でビッグマン、攻撃でプレーメーカーとして機能した。スモールボールは「小さい選手を並べる」ことではなく、「全員が判断でき、走れて、守れて、スペースを作れる」ことだった。デスラインナップは、その後のNBAの設計思想を変えた。</p>
+      </div>
+      <div class="col">
+        <div class="tag">Houston — 効率の革命</div>
+        <h3>データ分析時代の象徴</h3>
+        <p>ハーデンを中心に、アイソレーション、ステップバック3、リムアタック、フリースローを極限まで効率化。ミッドレンジを削り、スリーとリング周辺へ寄せた。一方でプレーオフでの限界、笛への依存、単調さへの批判も生んだ。戦術の進化は、常に議論を連れてきた。</p>
+      </div>
+    </div>
+    <div class="prose rv" style="margin-top:40px">
+      <p>守備も変わった。スイッチディフェンスは標準装備になり、ビッグマンにも横の動きが求められた。一方で、ブルック・ロペスやルディ・ゴベアのようなリムプロテクト型の価値も残った。ドロップで守るのか、スイッチするのか、ゾーンを混ぜるのか——相手のスターがプルアップ3を打てるかどうかで、守備の選択肢は大きく変わった。</p>
+      <p>そして現代の戦術を語るうえで、<span class="b">センター像の変化</span>は欠かせない。ヨキッチはパスで、エンビードは得点力で、アデバヨは守備範囲で、ウェンバンヤマはサイズとスキルの両立で、それぞれ「センターにできること」を拡張した。2013年のセンターと2026年のセンターでは、求められる能力がまったく違う。戦術進化とは、3Pの増加だけでなく、すべてのポジションが再定義されていく過程だった。</p>
+      <p>なお、3P試投数が2024-25をピークに横ばいへ転じたことは、次の問いを開いている。外角一辺倒の時代が飽和したあと、リーグはどこで差をつけるのか——ヨキッチ、ブランソン、SGA、デローザンのようにミドルレンジとフットワークを武器にする選手の再評価は、その予兆かもしれない。</p>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 06 -->
+<section class="chapter" id="ch6">
+  <div class="wrap">
+    <div class="ch-head rv">
+      <div class="ch-rail"><div class="big-no">06</div><div class="kicker">制度設計</div></div>
+      <div class="ch-body">
+        <div class="en-kicker">League as a Product</div>
+        <h2>NBAは常に、<br>“商品としてのリーグ”を更新してきた。</h2>
+        <p class="lead">コート内だけでなく、制度面でも大きく変わった。プレーイン、NBA Cup、新CBA、メディア契約。一見バラバラだが、共通するのは「レギュラーシーズンの価値をどう保つか」「スターをどう出場させるか」「ファンにどう見てもらうか」という問いである。</p>
+      </div>
+    </div>
+    <div class="insti rv">
+      <div class="ins">
+        <div class="when">2020 導入<br>2022 正式採用</div>
+        <div><h3>プレーイン・トーナメント</h3>
+        <p>各カンファレンス7〜10位にもポストシーズン進出の可能性が残り、終盤の消化試合が減少。中位チームにも意味が生まれ、タンクか勝ちに行くかの判断にも影響を与えた。</p></div>
+      </div>
+      <div class="ins">
+        <div class="when">2023-24 開始</div>
+        <div><h3>NBA Cup(イン・シーズン・トーナメント)</h3>
+        <p>グループプレーとノックアウトを組み合わせ、レギュラーシーズンの中に別のタイトルを作る試み。2024年からはEmirates NBA Cupとして展開。2025年大会ではニックスがスパーズを124-113で破り初優勝(Cup MVPはブランソン)。半年後の2026年ファイナルで両者が再戦したことで、Cup決勝はその「前哨戦」として歴史に残った。</p></div>
+      </div>
+      <div class="ins">
+        <div class="when">2023.07 発効<br>→ 2029-30</div>
+        <div><h3>新CBA / セカンドエプロン</h3>
+        <p>2023年4月に選手会が批准し、7月1日に発効。セカンドエプロンを含む支出制限により、高額スターを複数抱えるチームは補強手段(トレードの合算、ミッドレベル例外、バイアウト市場など)が制限され、単純なスーパーチーム作りは以前より難しくなった。ドラフトと育成の価値が相対的に上がった。</p></div>
+      </div>
+      <div class="ins">
+        <div class="when">2024 発表<br>→ 2035-36</div>
+        <div><h3>11年メディア契約</h3>
+        <p>Disney、NBCUniversal、Amazon Prime Videoとの大型契約。地上波・ケーブル中心の時代から、配信を正面に据えた時代への転換点であり、NBAが「配信時代のスポーツコンテンツ」として再設計されることを意味する。NBA CupのノックアウトラウンドはPrime Videoが独占放映した。</p></div>
+      </div>
+    </div>
+    <div class="prose rv" style="margin-top:36px">
+      <p>試合数が多すぎる、スターが休む、レギュラーシーズンの価値が薄い、若いファンがフルゲームを見ない。そうした課題に対して、NBAは制度とメディアの両方から手を入れてきた。<strong>2013〜2026年のNBAは、競技であると同時に、世界中へ届けるエンターテインメントとして進化した時代でもある。</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 07 -->
+<section class="chapter" id="ch7">
+  <div class="wrap">
+    <div class="ch-head rv">
+      <div class="ch-rail"><div class="big-no">07</div><div class="kicker">文化とSNS</div></div>
+      <div class="ch-body">
+        <div class="en-kicker">Culture &amp; The Feed</div>
+        <h2>NBAは、世界中で<br>“語られる”リーグになった。</h2>
+        <p class="lead">NBAはもともと、音楽、ファッション、スニーカー、ストリートカルチャーと近いリーグだった。この時代に、その結びつきはさらに強くなった。選手はプレーする存在であると同時に、ブランドであり、発信者であり、時にメディアそのものになった。</p>
+      </div>
+    </div>
+    <div class="prose rv">
+      <p>SNSの影響は大きい。Xでは試合中のプレー、審判への不満、トレードの噂、選手の発言がリアルタイムで拡散される。ハイライトはYouTube、Instagram、TikTokで短く切り取られ、フルゲームを見ていない人にも届く。1本のダンク、1本のステップバック3、1つの表情、ベンチのリアクションが、その日の話題を作る。深夜の1本のブザービーターが、翌朝にはタイムラインを占拠している。</p>
+    </div>
+    <div class="pull rv">
+      <p>試合の90%を見ていなくても、その10秒は世界中が共有している。90年代や2000年代とは、まったく違う消費のされ方である。</p>
+      <div class="who">Chapter 07 — The Highlight Economy</div>
+    </div>
+    <div class="prose rv">
+      <p>インサイダー報道もコンテンツ化した。誰が移籍するのか。誰が不満を持っているのか。<strong>オフシーズンやトレードデッドラインは、試合と同じくらい注目されるイベントになった。</strong>NBAは、移籍市場、契約、ロスター構築、ドラフトまで含めて楽しむリーグになった。</p>
+      <p>選手個人のブランド化も進んだ。レブロンはメディア企業や社会的発信を通じて選手以上の存在に。カリーはアンダーアーマーとともに独自のブランド価値を作った。KDやドレイモンドはポッドキャストで自分の言葉を持ち、リラードはラップ、ウェストブルックはファッション、カイリーは価値観や発言も含めて語られた。一方でこのSNS時代は、1試合の不調やプレーオフでの敗戦が、すぐにレガシー論争へつながる過熱も生んだ。</p>
+    </div>
+  </div>
+</section>
+<!-- CHAPTER 08 — KOBE -->
+<section class="kobe" id="ch8">
+  <div class="wrap inner">
+    <div class="memorial-tag rv">追悼 — MAMBA MENTALITY LIVES ON</div>
+    <div>
+      <div class="en-kicker">In Memoriam — Chapter 08</div>
+      <h2>これは訃報ではなく、<br>記憶の節目である。</h2>
+      <div class="nums rv">
+        <div class="kn">8<small>着用 1996–2006</small></div>
+        <div class="kn solid">24<small>着用 2006–2016</small></div>
+      </div>
+      <p class="lead rv">2020年1月26日、コービー・ブライアントは娘のジアナさん、そして他の同乗者7名とともにヘリコプター事故で亡くなった。2000年代から2010年代前半のNBAを象徴した存在が、突然この世を去った出来事だった。</p>
+      <div class="prose rv">
+        <p>当時のNBAは、ちょうど世代交代の途中にあった。レブロンはレイカーズで再び頂点を狙い、ウォリアーズ王朝はKD退団とクレイの負傷で一度止まり、ヤニス、ヨキッチ、ルカ、テイタムらが次世代へ向かっていた。コービーはすでに引退していたが、その存在感はまだ強く残っていた。多くの若い選手にとって、コービーは憧れであり、競技者としての基準であり、メンターでもあった。事故の直後、各地のアリーナでは背番号8と24にちなんだ8秒と24秒のバイオレーションが捧げられた。</p>
+        <p>公式に残った影響として重要なのが、<span class="g">オールスターMVP賞の改称</span>である。NBAは2020年2月、オールスターゲームMVP賞に「コービー・ブライアント」の名を冠すると発表した。リーグの華やかさとスター性を象徴する場に、彼の名前が恒久的に残ることになった。そして同じ2020年、レイカーズはバブルのシーズンを制し、「コービーを失った年にレイカーズが優勝した」という物語を背負った。</p>
+        <p>コービーの死が後のNBAに与えた影響は、制度よりも文化に強く残っている。<span class="g">“Mamba Mentality”</span>は、世代を超えて受け継がれる競技者の姿勢として語られるようになった。ブッカー、テイタム、デローザン、カイリー、ポール・ジョージなど、多くの選手がプレースタイルだけでなく、練習への姿勢やメンタリティにコービーの影を重ねた。レガシーは男子NBAにとどまらず、WNBAは2020年4月、コービーとジアナさんの名を冠した「Kobe &amp; Gigi Bryant WNBA Advocacy Award」を導入した。</p>
+      </div>
+      <div class="date-note rv">2020.01.26 — Calabasas, California · Kobe Bean Bryant (1978–2020) &amp; Gianna Maria-Onore Bryant (2006–2020)</div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 09 — DEBATES -->
+<section class="chapter" id="ch9">
+  <div class="wrap">
+    <div class="ch-head rv">
+      <div class="ch-rail"><div class="big-no">09</div><div class="kicker">論争史</div></div>
+      <div class="ch-body">
+        <div class="en-kicker">The Arguments</div>
+        <h2>「何が起きたか」だけでなく、<br>「人々は何を語っていたか」。</h2>
+        <p class="lead">試合結果や受賞歴だけでは、その時代の空気は見えてこない。当時ファンやメディアが何を言い争っていたのかを見ることで、その時代の価値観が見えてくる。論争はNBAの欠点ではなく、魅力でもある。</p>
+      </div>
+    </div>
+    <div class="debates rv">
+      <div class="debate">
+        <div class="topic"><small>2016 · Free Agency</small><div class="t">KDのウォリアーズ加入</div></div>
+        <div class="side a"><b>批判</b>73勝チームへの移籍で競争バランスが壊れた。スーパーチーム時代の象徴となった。</div>
+        <div class="vs">VS</div>
+        <div class="side b"><b>擁護</b>選手が自分のキャリアを自分で選ぶ自由を行使しただけだ。批判は結果論にすぎない。</div>
+      </div>
+      <div class="debate">
+        <div class="topic"><small>2020 · The Bubble</small><div class="t">バブル優勝の価値</div></div>
+        <div class="side a"><b>懐疑</b>無観客・移動なし・中立地という特殊環境。“バブルリング”という言葉は今も残る。</div>
+        <div class="vs">VS</div>
+        <div class="side b"><b>反論</b>むしろ隔離環境こそ精神的に最も困難だった。記録上は完全に正当な優勝である。</div>
+      </div>
+      <div class="debate">
+        <div class="topic"><small>Every Spring · Awards</small><div class="t">MVP論争</div></div>
+        <div class="side a"><b>争点</b>個人成績かチーム成績か。出場試合数か効率か。守備は含めるのか。ナラティブは票に影響してよいのか。</div>
+        <div class="vs">VS</div>
+        <div class="side b"><b>本質</b>ヨキッチ、エンビード、ヤニス、SGAらが競った時代、MVPは「リーグが何を価値とみなすか」を映す鏡になった。</div>
+      </div>
+      <div class="debate">
+        <div class="topic"><small>2010s–20s · Health</small><div class="t">ロードマネジメント</div></div>
+        <div class="side a"><b>合理</b>82試合は長い。スターの健康管理はチームにとって合理的な投資判断である。</div>
+        <div class="vs">VS</div>
+        <div class="side b"><b>不満</b>ファンはチケットを買い、放送局はスター出場を前提に契約する。誰のためのレギュラーシーズンなのか。制度側もプレーインやNBA Cup、出場試合数の受賞要件などで応答した。</div>
+      </div>
+      <div class="debate">
+        <div class="topic"><small>The 3-Point Era</small><div class="t">3P偏重への不満</div></div>
+        <div class="side a"><b>不満</b>どのチームも同じようにスリーを打つ。ミドルレンジやポストプレーの美学が薄れた。</div>
+        <div class="vs">VS</div>
+        <div class="side b"><b>反証</b>ヨキッチ、ブランソン、SGA、デローザンら、ミドルとフットワークを武器にする選手は生き残った。そして試投数自体、2024-25の37.6本をピークに頭打ちの兆しを見せている。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 10 — JAPAN -->
+<section class="chapter" id="ch10">
+  <div class="wrap">
+    <div class="ch-head rv">
+      <div class="ch-rail"><div class="big-no">10</div><div class="kicker">日本視点</div></div>
+      <div class="ch-body">
+        <div class="en-kicker">The View from Japan</div>
+        <h2>「日本人がNBAへ行った」ではなく、<br>「日本からNBAを見る目が変わった」。</h2>
+        <p class="lead">かつて日本人にとってNBAは、遠い世界の最高峰だった。しかしこの時代には、渡邊雄太、八村塁、河村勇輝らの挑戦によって、NBAは日本のバスケットボールと直接つながる舞台になった。3人を並べると、日本人NBA史には複数のルートがあることが見えてくる。</p>
+      </div>
+    </div>
+    <div class="jp-profiles rv">
+      <div class="jp">
+        <div class="route">Route A — ドラフト上位</div>
+        <h3>八村 塁</h3><div class="en">Rui Hachimura</div>
+        <p>2019年、NBAドラフト全体9位でワシントン・ウィザーズに指名。日本人選手として初めて1巡目指名を受けた。ゴンザガ大からの挑戦は個人の快挙にとどまらず、日本のバスケットボールが世界最高峰と接続された象徴的な瞬間だった。のちにレイカーズへ移籍し、プレーオフの大舞台も経験している。</p>
+        <div class="fact">2019 NBA Draft — 1st Round, 9th Overall</div>
+      </div>
+      <div class="jp">
+        <div class="route">Route B — ドラフト外</div>
+        <h3>渡邊 雄太</h3><div class="en">Yuta Watanabe</div>
+        <p>ドラフト外からTwo-Way契約、Gリーグ、ロスター争いを経てNBAで生き残った。グリズリーズ、ラプターズ、ネッツ、サンズと渡り歩き、ネッツ時代には一時3P成功率でリーグ上位に立つなど、役割を勝ち取る力を証明。6シーズンを戦い抜き、2024年に日本のBリーグへ復帰した。</p>
+        <div class="fact">Undrafted — 6 NBA Seasons (2018–2024)</div>
+      </div>
+      <div class="jp">
+        <div class="route">Route C — サイズの壁へ</div>
+        <h3>河村 勇輝</h3><div class="en">Yuki Kawamura</div>
+        <p>小柄な日本人ガードがどこまで通用するのか、という問いを背負う挑戦。Bリーグと日本代表で評価を高め、2024-25はメンフィス・グリズリーズで22試合に出場。2025年7月にはシカゴ・ブルズとTwo-Way契約を結んだ。スピード、視野、テンポ操作で「サイズ以外のすべて」を武器にする。</p>
+        <div class="fact">Two-Way — MEM 2024-25 → CHI 2025-26</div>
+      </div>
+    </div>
+    <div class="prose rv" style="margin-top:36px">
+      <p>さらに、日本代表の躍進もNBAとの接点を強めた。2019年ワールドカップ、東京五輪、2023年ワールドカップ(沖縄開催・パリ五輪切符獲得)、パリ五輪と、日本バスケは国際舞台での経験を重ねた。NBA選手やNBA挑戦組が代表に関わることで、国内ファンがNBAを見る理由も増えた。<strong>NBAは「遠い憧れ」から、「日本代表やBリーグの先にある具体的な目標」へ変わった。</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 12 — SYMBOLS -->
+<section class="chapter" id="ch12">
+  <div class="wrap">
+    <div class="ch-head rv">
+      <div class="ch-rail"><div class="big-no">12</div><div class="kicker">象徴整理</div></div>
+      <div class="ch-body">
+        <div class="en-kicker">The Icons — An Index</div>
+        <h2>誰が一番偉大かではなく、<br>誰がどの変化を象徴していたのか。</h2>
+        <p class="lead">これはランキングではない。選手・チーム・試合・出来事という複数の入口から、2013〜2026年のNBAを振り返るための索引である。</p>
+      </div>
+    </div>
+    <div class="symbols rv">
+      <div class="sym">
+        <div class="cat">Players</div>
+        <ul>
+          <li><b>レブロン・ジェームズ</b>始まりから終盤まで、影響力を持ち続けた</li>
+          <li><b>ステフィン・カリー</b>NBAの「距離感」を変えた</li>
+          <li><b>ケビン・デュラント</b>スーパーチーム論争の中心</li>
+          <li><b>ヤニス・アデトクンボ</b>フィジカルと成長の物語</li>
+          <li><b>ニコラ・ヨキッチ</b>センターの概念を変えた</li>
+        </ul>
+      </div>
+      <div class="sym">
+        <div class="cat">Teams</div>
+        <ul>
+          <li><b>ウォリアーズ</b>期間中もっとも戦術的影響が大きい</li>
+          <li><b>スパーズ</b>2014年に完成形、2026年に未来の入口</li>
+          <li><b>ニックス</b>眠っていたビッグマーケットの熱を中心へ</li>
+          <li><b>ナゲッツ / セルティックス / サンダー</b>それぞれ新しい優勝モデル</li>
+        </ul>
+      </div>
+      <div class="sym">
+        <div class="cat">Games</div>
+        <ul>
+          <li><b>2013 Finals G6</b>レイ・アレンの同点3</li>
+          <li><b>2016 Finals G7</b>1勝3敗からの逆転劇</li>
+          <li><b>2019</b>ラプターズ、国境を越えた優勝</li>
+          <li><b>2021 Finals G6</b>ヤニス50得点の戴冠</li>
+          <li><b>2026 Finals G4–G5</b>29点差逆転、ブランソン45点</li>
+        </ul>
+      </div>
+      <div class="sym">
+        <div class="cat">Events</div>
+        <ul>
+          <li><b>2016.07</b>KDのウォリアーズ加入</li>
+          <li><b>2020.01</b>コービーの死</li>
+          <li><b>2020.03</b>コロナによる中断→バブル</li>
+          <li><b>2023.07</b>新CBA発効(セカンドエプロン)</li>
+          <li><b>2025.02</b>ドンチッチのレイカーズ電撃移籍</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 13 — FUTURE -->
+<section class="future" id="ch13">
+  <div class="wrap">
+    <div class="en-kicker rv">Chapter 13 — What Comes Next</div>
+    <h2 class="rv">次のNBAは、ひとつの方向へ<br>進むのではない。</h2>
+    <p class="lead rv">2026年時点で次のNBAを考えると、中心にあるのは5つの力である。より大きく、より速く、よりスキルフルに、より国際的に、より制度設計が重要になり、よりメディア化していく。その複雑さこそが、これからのNBAの面白さである。</p>
+    <div class="forces rv">
+      <div class="force"><div class="fn">I</div><h4>国際化</h4><p>ヨキッチ、ヤニス、エンビード、SGA、ドンチッチ、ウェンバンヤマ——MVP級・主役級にアメリカ国外出身者が並ぶ。NBAは世界中の才能が集まるグローバルリーグになった。</p></div>
+      <div class="force"><div class="fn">II</div><h4>大型化 × スキル</h4><p>ウェンバンヤマが象徴する。リムを守り、ボールを扱い、外から打ち、走る。これまで別々の選手に分かれていた能力が、ひとりに統合されつつある。</p></div>
+      <div class="force"><div class="fn">III</div><h4>小柄の価値</h4><p>ブランソンや河村の挑戦が示すように、角度・ハンドリング・判断・テンポを支配できれば、サイズに劣っても価値は残る。大型化と同時に、NBAはスキルのリーグでもある。</p></div>
+      <div class="force"><div class="fn">IV</div><h4>制度設計</h4><p>新CBAとセカンドエプロンの制約下では、ドラフト、育成、安価なロールプレイヤーの発掘が生命線になる。サンダー型のチーム作りは、ひとつのモデルになった。</p></div>
+      <div class="force"><div class="fn">V</div><h4>配信時代</h4><p>Amazonの参入で、ハイライト、ショート動画、ライブ配信、データ連動、国際配信へ。NBAは試合だけでなく、周辺体験を含めたスポーツメディアになっていく。</p></div>
+    </div>
+    <div class="prose rv" style="margin-top:40px">
+      <p>次のNBAを考えるとき、2013〜2026年の流れは大きなヒントになる。<span class="r">ウォリアーズがスリーの価値を変え、ヨキッチがセンター像を変え、SGAやブランソンがガードの価値を再定義し、ウェンバンヤマが未来のビッグマン像を提示した。</span>制度はスーパーチーム作りを制限し、メディアは配信時代へ移行した。2013〜2026年は、その未来へ向かうための大きな変化の期間だった。</p>
+    </div>
+    <p class="closing rv">では、次に“当たり前”が塗り替えられるのは、いつなのか——<br>それは、まだ誰にもわからない。</p>
+  </div>
+</section>
+
+<!-- COLOPHON / SOURCES -->
+<section class="colophon">
+  <div class="wrap">
+    <div class="grid">
+      <div class="rv">
+        <h3>Sources — 主要出典</h3>
+        <ol>
+          <li>Basketball-Reference「NBA League Averages — Per Game」(3P試投数・平均得点・ペース、2012-13〜2025-26)</li>
+          <li>NBA.com / ESPN(2025 Emirates NBA Cup 決勝、2026 NBA Finals 各種記録)</li>
+          <li>NBA公式発表(オールスターMVP賞改称 2020.02、11年メディア契約 2024)</li>
+          <li>NBPA(現行CBA:2023年4月批准・7月1日発効・2029-30まで)</li>
+          <li>NBA G League / 各球団公式(河村勇輝 Two-Way契約、渡邊雄太 経歴)</li>
+        </ol>
+      </div>
+      <div class="note rv">
+        <h3>Note — 編集方針</h3>
+        <p>本稿の統計はレギュラーシーズンのリーグ平均値を用い、数値はBasketball-Referenceの公開データに基づく。優勝チーム・ファイナル結果・受賞者は各シーズンのNBA公式記録に拠った。本稿は「誰が勝ったか」の記録集ではなく、「NBAはどんなリーグへ変わっていったのか」を読むための特集である。事実と評価が分かれる論点(バブル優勝の価値、MVP基準など)は、第9章で両論を併記した。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="end">
+  <div class="t">2013<em>—</em>2026</div>
+  <div class="s">A Chronicle of Change — NBA変遷史</div>
+  <div class="m">13 Chapters · 14 Seasons · 11 Champions · Compiled 2026.07</div>
+</footer>
+
+<!-- MODAL -->
+<div class="veil" id="veil">
+  <div class="modal" id="modalBox">
+    <button class="close" id="mClose" aria-label="閉じる">✕</button>
+    <div class="m-inner">
+      <div class="m-season" id="mSeason"></div>
+      <div class="m-champ" id="mChamp"></div>
+      <div class="m-team" id="mTeam"></div>
+      <div class="m-kw" id="mKw"></div>
+      <div class="m-body" id="mBody"></div>
+      <div class="m-meta" id="mMeta"></div>
+    </div>
+  </div>
+</div>
+<script>
+const SEASONS = [{"yr": "2012-13", "champ": "HEAT", "team": "マイアミ・ヒート", "kw": "ビッグ3の頂点", "accent": null, "body": ["レブロン、ウェイド、ボッシュのビッグ3が連覇を達成。スパーズとのファイナルは第7戦までもつれ込んだ。", "第6戦、レイ・アレンの同点3ポイントはNBAファイナル史に残る場面として語り継がれている。レブロン時代の頂点を維持したシーズンだった。"], "meta": {"Finals MVP": "レブロン・ジェームズ", "Result": "vs スパーズ 4–3", "残したもの": "ヒート王朝の完成"}}, {"yr": "2013-14", "champ": "SPURS", "team": "サンアントニオ・スパーズ", "kw": "チームバスケの完成形", "accent": null, "body": ["スパーズがヒートを4勝1敗で破り、前年の雪辱を果たした。", "カワイ・レナードがFinals MVP。ダンカン、パーカー、ジノビリ、ポポビッチによるボールムーブメントの集大成が示された。"], "meta": {"Finals MVP": "カワイ・レナード", "Result": "vs ヒート 4–1", "残したもの": "チームバスケット"}}, {"yr": "2014-15", "champ": "WARRIORS", "team": "ゴールデンステート・ウォリアーズ", "kw": "革命の始動", "accent": "warriors", "body": ["カリー、クレイ、ドレイモンドを中心に、スリーとスペーシングとスモールボールで40年ぶりの優勝。", "NBAの勝ち方そのものを変える時代が幕を開けた。他チームが真似せざるを得ない基準がここで生まれた。"], "meta": {"Finals MVP": "アンドレ・イグダーラ", "Result": "vs キャバリアーズ 4–2", "残したもの": "ウォリアーズ革命の起点"}}, {"yr": "2015-16", "champ": "CAVALIERS", "team": "クリーブランド・キャバリアーズ", "kw": "歴史的逆転", "accent": null, "body": ["ウォリアーズがレギュラーシーズン73勝9敗の史上最高記録を樹立するも、ファイナルで1勝3敗から逆転負け。", "キャバリアーズがクリーブランドに52年ぶりの主要プロスポーツタイトルをもたらした。カイリーのクラッチ3、レブロンのチェイスダウンブロックが象徴として残る。"], "meta": {"Finals MVP": "レブロン・ジェームズ", "Result": "vs ウォリアーズ 4–3", "残したもの": "3-1からの逆転劇"}}, {"yr": "2016-17", "champ": "WARRIORS", "team": "ゴールデンステート・ウォリアーズ", "kw": "スーパーチーム", "accent": "warriors", "body": ["ケビン・デュラントを加えたウォリアーズが、プレーオフ16勝1敗という圧倒的な内容で優勝。", "「競争バランスが壊れた」という批判と、選手がキャリアを選ぶ自由という擁護。スーパーチーム論争の中心となった。"], "meta": {"Finals MVP": "ケビン・デュラント", "Result": "vs キャバリアーズ 4–1", "残したもの": "スーパーチーム時代"}}, {"yr": "2017-18", "champ": "WARRIORS", "team": "ゴールデンステート・ウォリアーズ", "kw": "王朝の連覇", "accent": "warriors", "body": ["ウォリアーズがキャバリアーズをスウィープして連覇。KDが2年連続Finals MVP。ウォリアーズ対キャバリアーズは史上初の4年連続同一カード決戦となった。", "健康であればほとんど攻略不可能——勢力図の一極化が頂点に達した。"], "meta": {"Finals MVP": "ケビン・デュラント", "Result": "vs キャバリアーズ 4–0", "残したもの": "一極化の頂点"}}, {"yr": "2018-19", "champ": "RAPTORS", "team": "トロント・ラプターズ", "kw": "国境を越えた王者", "accent": null, "body": ["ラプターズがウォリアーズを破り、アメリカ国外を本拠とするチームとして史上初の優勝。", "カワイ・レナードが2度目のFinals MVP。KDとクレイの負傷も重なり、ウォリアーズ王朝は一度終わりを迎えた。"], "meta": {"Finals MVP": "カワイ・レナード", "Result": "vs ウォリアーズ 4–2", "残したもの": "王朝の終焉"}}, {"yr": "2019-20", "champ": "LAKERS", "team": "ロサンゼルス・レイカーズ", "kw": "喪失とバブル", "accent": "lakers", "body": ["コービーの死、3月11日のシーズン中断、7月30日からのディズニー・ワールドでの22チーム制バブル再開——NBA史でも例外的なシーズン。", "レブロンとADのレイカーズが優勝。記録以上に、感情的な意味を背負った一年だった。"], "meta": {"Finals MVP": "レブロン・ジェームズ", "Result": "vs ヒート 4–2", "残したもの": "喪失・記憶・異例の開催"}}, {"yr": "2020-21", "champ": "BUCKS", "team": "ミルウォーキー・バックス", "kw": "ヤニスの戴冠", "accent": null, "body": ["バックスが50年ぶりの優勝。ヤニス・アデトクンボがフランチャイズにタイトルをもたらした。", "優勝を決めた第6戦の50得点は、ファイナルのクローズアウトゲームとしては歴代最多級。フィジカルとリムアタックの時代の象徴となった。"], "meta": {"Finals MVP": "ヤニス・アデトクンボ", "Result": "vs サンズ 4–2", "残したもの": "多極化の始まり"}}, {"yr": "2021-22", "champ": "WARRIORS", "team": "ゴールデンステート・ウォリアーズ", "kw": "王朝の再証明", "accent": "warriors", "body": ["カリー、クレイ、ドレイモンドのコアが再び頂点に。カリーがキャリア初のFinals MVPを獲得した。", "2010年代の王朝が単なる過去ではなかったことを証明した復活優勝だった。"], "meta": {"Finals MVP": "ステフィン・カリー", "Result": "vs セルティックス 4–2", "残したもの": "王朝の再証明"}}, {"yr": "2022-23", "champ": "NUGGETS", "team": "デンバー・ナゲッツ", "kw": "ポイントセンター", "accent": null, "body": ["ナゲッツがヨキッチとマレーの2メンゲームを軸に、フランチャイズ史上初の優勝。", "ビッグマンがチームの司令塔になる時代を完全に証明し、センターを起点にした新しい優勝モデルを確立した。"], "meta": {"Finals MVP": "ニコラ・ヨキッチ", "Result": "vs ヒート 4–1", "残したもの": "ポイントセンターの完成"}}, {"yr": "2023-24", "champ": "CELTICS", "team": "ボストン・セルティックス", "kw": "積み上げの結実", "accent": null, "body": ["セルティックスが球団史上最多の18回目の優勝。テイタムとブラウンを軸に、大型ウイングを複数並べる編成を完成させた。", "全員がスリーを打ち、守れるチーム。3P時代の先にある「全員が複数の役割を持つ」設計の到達点だった。"], "meta": {"Finals MVP": "ジェイレン・ブラウン", "Result": "vs マーベリックス 4–1", "残したもの": "現代的ロスター設計の完成"}}, {"yr": "2024-25", "champ": "THUNDER", "team": "オクラホマシティ・サンダー", "kw": "若きチーム作り", "accent": null, "body": ["サンダーがペイサーズを第7戦で下して優勝。SGAはMVPとFinals MVPを同一シーズンで獲得した。", "ドラフト・育成・柔軟な編成の積み上げが報われ、新CBA時代における「若手を軸にした強豪」の成功例となった。"], "meta": {"Finals MVP": "シェイ・ギルジャス=アレクサンダー", "Result": "vs ペイサーズ 4–3", "残したもの": "新CBA時代のモデル"}}, {"yr": "2025-26", "champ": "KNICKS", "team": "ニューヨーク・ニックス", "kw": "53年ぶりの復権", "accent": null, "body": ["ニックスがスパーズを4勝1敗で破り、1973年以来53年ぶりの制覇。奇しくも1999年ファイナル(スパーズ勝利)のリマッチだった。", "4勝すべてが二桁ビハインドからの逆転勝ち。第4戦では29点差を覆すファイナル史上最大の逆転劇を演じ、第5戦はブランソンが45得点で締めた。", "12月のNBA Cupに続く戴冠で、Cupとリーグ優勝の「ダブル」を達成した史上初のチームとなった。西ではウェンバンヤマのスパーズがディフェンディング王者サンダーを第7戦で破って勝ち上がっており、新時代の入口が重なった。"], "meta": {"Finals MVP": "ジェイレン・ブランソン", "Result": "vs スパーズ 4–1", "残したもの": "ニックス復権 / 史上初のダブル"}}];
+
+// ---- timeline cards ----
+const track = document.getElementById('tlTrack');
+SEASONS.forEach((s,i)=>{
+  const c=document.createElement('div');
+  c.className='tl-card'+(s.accent?(' '+s.accent):'');
+  c.setAttribute('tabindex','0');c.setAttribute('role','button');
+  c.setAttribute('aria-label',s.yr+' '+s.champ+' 詳細を開く');
+  c.innerHTML=`<div class="yr2">${s.yr}</div><div class="tick"></div>
+    <div class="champ">${s.champ}</div><span class="kw">${s.kw}</span>
+    <span class="open">Open +</span>`;
+  c.addEventListener('click',()=>openModal(i));
+  c.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openModal(i);}});
+  track.appendChild(c);
+});
+
+// ---- ledger table ----
+const tbody=document.querySelector('#ledger tbody');
+SEASONS.forEach((s,i)=>{
+  const tr=document.createElement('tr');
+  const cls=s.accent==='warriors'?' class="champ w"':(s.accent==='lakers'?' class="champ l"':' class="champ"');
+  tr.innerHTML=`<td class="season">${s.yr}</td><td${cls}>${s.champ}</td>
+    <td class="res">${s.meta['Result'].replace('vs ','')}</td>
+    <td>${s.meta['Finals MVP']}</td><td class="kw">${s.meta['残したもの']}</td>
+    <td class="more">Open +</td>`;
+  tr.addEventListener('click',()=>openModal(i));
+  tbody.appendChild(tr);
+});
+
+// ---- modal ----
+const veil=document.getElementById('veil');
+const modalBox=document.getElementById('modalBox');
+let lastFocus=null;
+function openModal(i){
+  const s=SEASONS[i];
+  lastFocus=document.activeElement;
+  modalBox.className='modal'+(s.accent?(' '+s.accent):'');
+  document.getElementById('mSeason').textContent=s.yr+' · NBA Champion';
+  document.getElementById('mChamp').textContent=s.champ;
+  document.getElementById('mTeam').textContent=s.team;
+  document.getElementById('mKw').textContent=s.kw;
+  document.getElementById('mBody').innerHTML=s.body.map(p=>`<p>${p}</p>`).join('');
+  document.getElementById('mMeta').innerHTML=Object.entries(s.meta).map(([k,v])=>
+    `<div class="item"><div class="k">${k}</div><div class="v">${v}</div></div>`).join('');
+  veil.classList.add('on');document.body.style.overflow='hidden';
+  document.getElementById('mClose').focus();
+}
+function closeModal(){veil.classList.remove('on');document.body.style.overflow='';if(lastFocus)lastFocus.focus();}
+document.getElementById('mClose').addEventListener('click',closeModal);
+veil.addEventListener('click',e=>{if(e.target===veil)closeModal();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&veil.classList.contains('on'))closeModal();});
+
+// ---- scroll reveal ----
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+// ---- progress ----
+const prog=document.getElementById('progress');
+addEventListener('scroll',()=>{const h=document.documentElement;
+  prog.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+
+// ---- drawer ----
+const drawer=document.getElementById('drawer');
+document.getElementById('menuBtn').addEventListener('click',()=>drawer.classList.add('on'));
+document.getElementById('drawerX').addEventListener('click',()=>drawer.classList.remove('on'));
+drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>drawer.classList.remove('on')));
+</script>
+</body>
+</html>
